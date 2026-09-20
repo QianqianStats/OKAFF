@@ -339,8 +339,7 @@ PYTHON_BIN=/path/to/python bash example/run_okaff_adaptive_example.sh --n-runs 1
 
 This repository includes or builds on code and data from the following projects:
 
-- The implementation under `src/mmdew/` is adapted from [MMDEW](https://github.com/FlopsKa/mmdew-change-detector).
-- The Online RFF MMD implementation is based on [rff-change-detection](https://github.com/FlopsKa/rff-change-detection).
+- The implementation under `src/mmdew/` is adapted from [MMDEW](https://github.com/FlopsKa/mmdew-change-detector) and [rff-change-detection](https://github.com/FlopsKa/rff-change-detection). 
 - `real-data/datasets/`, `real-data/annotations.json`, and `real-data/metrics.py` are from [TCPDBench](https://github.com/alan-turing-institute/TCPDBench).
 
 
