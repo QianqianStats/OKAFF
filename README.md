@@ -36,14 +36,22 @@ OKAFF/
 
 The experiment scripts locate `src` relative to the repository, so the runners can be launched from the repository root.
 
+
 ## Environment setup with uv
 
-Python 3.11 is recommended.
+Python 3.11 is recommended. Run the following from the repository root with `uv` and Git installed:
 
 ```bash
 cd /OKAFF
 uv venv --python 3.11
-uv pip install numpy pandas scipy scikit-learn matplotlib tqdm numexpr onlinecp ipython jupyter "setuptools==81.0.0"
+uv pip install numpy pandas scipy scikit-learn matplotlib tqdm numexpr ipython jupyter "setuptools==81.0.0"
+uv pip install "git+https://github.com/lightonai/newma.git"
+```
+
+Verify the required `onlinecp` imports:
+
+```bash
+.venv/bin/python -c "from onlinecp.algos import NEWMA; import onlinecp.utils.feature_functions; print('onlinecp installed successfully')"
 ```
 
 The shell runners use `.venv/bin/python` by default. A different interpreter can be supplied through `PYTHON_BIN`:
@@ -51,6 +59,7 @@ The shell runners use `.venv/bin/python` by default. A different interpreter can
 ```bash
 PYTHON_BIN=/path/to/python bash adaptive-thresholds/run_adaptive_d20.sh --n-runs 10
 ```
+
 
 ## Adaptive-threshold experiments
 
