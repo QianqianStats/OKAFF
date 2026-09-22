@@ -92,7 +92,7 @@ bash fixed-thresholds/run_fixed_d20.sh --n-runs 200
 This runs:
 
 1. d20 ARL experiments
-2. d20 EDD experiments using the matching ARL CSVs
+2. d20 EDD experiments 
 3. d20 full and short ARL-versus-EDD plots
 
 
@@ -106,7 +106,7 @@ bash fixed-thresholds/run_fixed_d1.sh --n-runs 200
 This runs:
 
 1. d1 ARL experiments
-2. d1 EDD experiments using the matching ARL CSVs
+2. d1 EDD experiments 
 3. d1 full and short ARL-versus-EDD plots
 
 The default is 200 runs when `--n-runs` is omitted. 
@@ -143,8 +143,6 @@ The runtime experiments compare NEWMA, OKAFF, Online RFF MMD, MMDEW, ScanB, and 
 .venv/bin/python runtime/benchmark_average_streaming_loglog_all_methods_vs_dimension_T20000.py
 ```
 
-The default is `--n-jobs 1`. Each worker runs all six methods sequentially for one repetition.
-
 
 ## Number of random Fourier features 
 (Figures 16,17)
@@ -165,7 +163,7 @@ N_RUNS=200 PYTHON_BIN=.venv/bin/python \
   bash "number of RFF/d20/run_okaff_d20_m500_5000.sh"
 ```
 
-Replace `N_RUNS=200` to change the Monte Carlo run count. The d1 runner also accepts `--full-grid`; its default uses thresholds 4.5, 7, and 9. The Python ARL and EDD scripts in both dimension folders accept `--features`, `--n-runs`, and `--full-grid` when run directly.
+Replace `N_RUNS=200` to change the Monte Carlo run count. The d1 runner also accepts `--full-grid`; its default uses three thresholds. The Python ARL and EDD scripts in both dimension folders accept `--features`, `--n-runs`, and `--full-grid` when run directly.
 
 
 ## Reproducibility and runtime
@@ -225,10 +223,10 @@ N_RUNS=200 PYTHON_BIN=.venv/bin/python \
   bash "number of RFF/d20/run_okaff_d20_m500_5000.sh"
 ```
 
-Figures 3,4,5, 18-25
+Figures 3,4,5, 18-25:
 jupyter lab: ''boxplot'' is for all boxplots and related sample paths figures
 
-Figures 1,2 
+Figures 1,2:
 jupyter lab: ''time-dependent-thresholds-sample-paths-plot''
 
 
@@ -249,7 +247,6 @@ bash example/run_okaff_adaptive_example.sh --n-runs 500
 
 The runner executes `okaff_adaptive_threshold_arl.py` first, executes `okaff_adaptive_threshold_edd.py` second, and then joins their results by quantile. 
 
-The current example uses a standard Gaussian pre-change distribution and the post-change cases `N(0, 0.3I)` and `Uniform([-1,1]^20)`. 
 
 Set `--n-runs` to any positive integer. To use another Python interpreter, set `PYTHON_BIN`:
 
@@ -264,7 +261,7 @@ PYTHON_BIN=/path/to/python bash example/run_okaff_adaptive_example.sh --n-runs 1
 
 This repository includes or builds on code and data from the following projects:
 
-- The implementation under `src/mmdew/` is adapted from [MMDEW](https://github.com/FlopsKa/mmdew-change-detector) and [rff-change-detection](https://github.com/FlopsKa/rff-change-detection). 
+- The implementation under `src/mmdew/` is from [MMDEW](https://github.com/FlopsKa/mmdew-change-detector) and [rff-change-detection](https://github.com/FlopsKa/rff-change-detection). 
 - `real-data/datasets/`, `real-data/annotations.json`, and `real-data/metrics.py` are from [TCPDBench](https://github.com/alan-turing-institute/TCPDBench).
 
 
