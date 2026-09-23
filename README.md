@@ -1,6 +1,6 @@
 # OKAFF experiments
 
-This repository contains simulation and real-data experiments for Adaptive online kernel changepoint detection. It compares four main methods:
+This repository contains simulation and real-data experiments for Adaptive online kernel changepoint detection (http://arxiv.org/abs/2609.22545). It compares four main methods:
 
 - **OKAFF**: Online Kernel Adaptive Forgetting Factor
 - **NEWMA**
